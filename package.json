@@ -1,12 +1,35 @@
 {
-  "name": "@tapestry/plugin-sdk",
+  "name": "@aia-api-city/sdk",
   "version": "0.1.0",
+  "description": "SDK for building plugins for API City",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIA-API-City/02-sdk.git"
+  },
+  "keywords": [
+    "api-city",
+    "sdk",
+    "plugins"
+  ],
+  "author": "API City",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AIA-API-City/02-sdk/issues"
+  },
+  "homepage": "https://github.com/AIA-API-City/02-sdk#readme",
   "dependencies": {
     "eventemitter3": "^5.0.1"
   },
